@@ -8,7 +8,7 @@
 - 過去最高連勝数をブラウザに保存し、次回プレイ時にも確認できる。
 
 ## ③アプリのデプロイURL
-- 
+- https://hfukamauchi-stack.github.io/261107w_assignment/
 
 ## ④アプリのログイン用IDまたはPassword（ある場合）
 - ID：なし
