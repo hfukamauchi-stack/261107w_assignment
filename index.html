@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8BIT JANKEN SURVIVAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game">
+
+        <!-- TITLE SCREEN -->
+        <section id="title-screen" class="screen">
+            <p class="pixel-label">★ RETRO ARCADE GAME ★</p>
+            <h1>8BIT<br>JANKEN</h1>
+            <p class="subtitle">SURVIVAL MODE</p>
+
+            <div class="title-icon">✊ ✌ ✋</div>
+
+            <button id="start-btn" class="start-btn">
+                PRESS START
+            </button>
+
+            <p class="instruction">10 WINS TO CLEAR!</p>
+        </section>
+
+
+        <!-- BATTLE SCREEN -->
+        <section id="battle-screen" class="screen hidden">
+
+            <p class="pixel-label">ROUND <span id="round">1</span></p>
+
+            <h2 class="battle-title">CHOOSE YOUR HAND!</h2>
+
+            <div class="battle-area">
+
+                <div class="player">
+                    <p>YOU</p>
+                    <div id="player-hand" class="hand">?</div>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="cpu">
+                    <p>CPU</p>
+                    <div id="cpu-hand" class="hand">?</div>
+                </div>
+
+            </div>
+
+            <p id="message" class="message">SELECT YOUR HAND</p>
+
+            <div class="buttons">
+                <button class="hand-btn gu" data-hand="gu">✊<span>GU</span></button>
+                <button class="hand-btn choki" data-hand="choki">✌<span>CHOKI</span></button>
+                <button class="hand-btn pa" data-hand="pa">✋<span>PA</span></button>
+            </div>
+
+            <button id="next-btn" class="next-btn hidden">
+                NEXT BATTLE ▶
+            </button>
+
+            <button id="restart-btn" class="restart-btn hidden">
+                PLAY AGAIN
+            </button>
+
+<!-- HIGH SCORE -->
+<div class="high-score">
+    <span>BEST RECORD</span>
+    <span><strong id="best-score">0</strong> WINS</span>
+</div>
+
+            <!-- STREAK METER -->
+            <div class="streak-area">
+
+                <div class="streak-info">
+                    <span>WIN STREAK</span>
+                    <span><strong id="streak-count">0</strong> / 10</span>
+                </div>
+
+                <div id="streak-meter" class="streak-meter">
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                    <div class="meter-cell"></div>
+                </div>
+
+                <p class="meter-caption">REACH 10 TO BECOME A LEGEND!</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLEAR SCREEN -->
+        <section id="clear-screen" class="screen hidden">
+            <p class="pixel-label">★ CONGRATULATIONS ★</p>
+            <h1 class="clear-title">GAME<br>CLEAR!</h1>
+            <p>YOU ARE THE JANKEN MASTER!</p>
+            <div class="clear-icon">🏆</div>
+            <button id="clear-restart-btn" class="start-btn">
+                PLAY AGAIN
+            </button>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

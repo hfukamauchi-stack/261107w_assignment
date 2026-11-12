@@ -1,0 +1,401 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #10152f;
+    color: white;
+    font-family: 'Press Start 2P', monospace;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background-image:
+        radial-gradient(#252d55 1px, transparent 1px);
+    background-size: 12px 12px;
+}
+
+.game {
+    width: 100%;
+    max-width: 650px;
+    min-height: 650px;
+
+    background: #192344;
+    border: 5px solid #6ce5ff;
+    outline: 4px solid white;
+
+    padding: 35px 25px;
+
+    box-shadow: 12px 12px 0 #050918;
+}
+
+.screen {
+    text-align: center;
+    animation: appear 0.4s steps(5);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pixel-label {
+    color: #6ce5ff;
+    font-size: 11px;
+    margin-bottom: 30px;
+    line-height: 2;
+}
+
+h1 {
+    font-size: clamp(32px, 8vw, 55px);
+    line-height: 1.5;
+    color: #ffe66d;
+
+    text-shadow:
+        5px 5px #ed4b9b,
+        9px 9px #080d20;
+
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #ed4b9b;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.title-icon {
+    font-size: 42px;
+    margin: 45px 0;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 0;
+    transition: transform 0.1s;
+}
+
+button:hover {
+    filter: brightness(1.3);
+    transform: translateY(-4px);
+}
+
+button:active {
+    transform: translateY(3px);
+}
+
+.start-btn {
+    padding: 20px 25px;
+    background: #ed4b9b;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 7px #92275c;
+}
+
+.instruction {
+    color: #ffe66d;
+    font-size: 9px;
+    margin-top: 35px;
+    line-height: 2;
+}
+
+/* BATTLE */
+
+.battle-title {
+    font-size: 17px;
+    color: #ffe66d;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.battle-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.player, .cpu {
+    flex: 1;
+}
+
+.player p, .cpu p {
+    font-size: 12px;
+    color: #6ce5ff;
+    margin-bottom: 15px;
+}
+
+.hand {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+    background: #10152f;
+    border: 3px solid #6ce5ff;
+}
+
+.vs {
+    color: #ed4b9b;
+    font-size: 20px;
+}
+
+.message {
+    min-height: 50px;
+    color: #ffe66d;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.message.win {
+    color: #6ce5ff;
+    animation: flash 0.5s steps(2) infinite;
+}
+
+.message.lose {
+    color: #ff5964;
+}
+
+.message.draw {
+    color: #ffe66d;
+}
+
+@keyframes flash {
+    50% { opacity: 0.3; }
+}
+
+/* HAND BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.hand-btn {
+    width: 110px;
+    height: 90px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hand-btn span {
+    font-size: 9px;
+}
+
+.gu {
+    background: #ed4b9b;
+    box-shadow: 0 6px #92275c;
+    color: white;
+}
+
+.choki {
+    background: #328ee8;
+    box-shadow: 0 6px #19569b;
+    color: white;
+}
+
+.pa {
+    background: #e9b936;
+    box-shadow: 0 6px #9a771a;
+    color: #192344;
+}
+
+.hand-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+}
+
+/* NEXT BUTTON */
+
+.next-btn, .restart-btn {
+    margin-top: 25px;
+    padding: 15px 20px;
+    background: #6ce5ff;
+    color: #10152f;
+    font-size: 11px;
+    box-shadow: 0 6px #2585a3;
+}
+
+.restart-btn {
+    background: #ed4b9b;
+    color: white;
+    box-shadow: 0 6px #92275c;
+}
+
+/* STREAK METER */
+
+.streak-area {
+    margin-top: 55px;
+    padding-top: 25px;
+    border-top: 3px dashed #56658d;
+}
+
+.streak-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #6ce5ff;
+    margin-bottom: 18px;
+}
+
+#streak-count {
+    color: #ffe66d;
+    font-size: 16px;
+}
+
+.streak-meter {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+}
+
+.meter-cell {
+    height: 25px;
+    background: #10152f;
+    border: 2px solid #56658d;
+}
+
+.meter-cell.active {
+    background: #ffe66d;
+    border-color: #ffe66d;
+
+    box-shadow: 0 0 10px #ffe66d;
+    animation: fill-meter 0.3s steps(3);
+}
+
+@keyframes fill-meter {
+    from {
+        transform: scaleY(0.2);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.meter-caption {
+    font-size: 8px;
+    color: #ed4b9b;
+    margin-top: 18px;
+    line-height: 2;
+}
+
+/* CLEAR */
+
+.clear-title {
+    color: #ffe66d;
+    animation: flash 0.6s steps(2) infinite;
+}
+
+.clear-icon {
+    font-size: 80px;
+    margin: 35px 0;
+}
+
+#clear-screen > p:not(.pixel-label) {
+    color: #6ce5ff;
+    font-size: 10px;
+    line-height: 2;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .game {
+        padding: 25px 12px;
+        min-height: 600px;
+    }
+
+    .battle-area {
+        gap: 10px;
+    }
+
+    .hand {
+        height: 80px;
+        font-size: 40px;
+    }
+
+    .hand-btn {
+        width: 90px;
+        height: 80px;
+        font-size: 25px;
+    }
+
+    .battle-title {
+        font-size: 13px;
+    }
+
+    .streak-info {
+        font-size: 8px;
+    }
+
+    .meter-cell {
+        height: 18px;
+    }
+}
+
+
+/* HIGH SCORE */
+
+.high-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 35px;
+    margin-bottom: 20px;
+    padding: 18px 12px;
+
+    background: #10152f;
+    border: 3px solid #ffe66d;
+
+    color: #ffe66d;
+    font-size: 10px;
+
+    box-shadow: 4px 4px 0 #080d20;
+}
+
+#best-score {
+    color: #6ce5ff;
+    font-size: 17px;
+}
+
+@media (max-width: 480px) {
+    .high-score {
+        font-size: 8px;
+    }
+
+    #best-score {
+        font-size: 14px;
+    }
+}
